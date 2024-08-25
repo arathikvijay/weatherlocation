@@ -118,13 +118,15 @@ class _home_screenState extends State<home_screen> {
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
-                              Text("24",
+                              Text(weatherController
+                                        .weatherResponseModel!.main.temp.toString(),
                                   style: TextStyle(
                                       fontSize: 72,
                                       color: Colors.white,
                                       fontWeight: FontWeight.bold)),
                               Text(
-                                "Heavy rain",
+                                weatherController
+                                        .weatherResponseModel!.weather[0].main,
                                 style: TextStyle(
                                     fontSize: 16, color: Colors.white),
                               ),
@@ -147,7 +149,8 @@ class _home_screenState extends State<home_screen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "3.7 km/h",
+                                      "${weatherController
+                                        .weatherResponseModel!.wind.speed.toString()}km/hr" ,
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
@@ -175,12 +178,12 @@ class _home_screenState extends State<home_screen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "74%",
+                                        "${weatherController.weatherResponseModel!.clouds.all}%",
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
                                       Text(
-                                        "Chance of rain",
+                                        "Clouds       ",
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
@@ -207,7 +210,7 @@ class _home_screenState extends State<home_screen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "1010 mbar",
+                                        "${weatherController.weatherResponseModel!.main.pressure} mbar",
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
@@ -235,12 +238,12 @@ class _home_screenState extends State<home_screen> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        "83%",
+                                        "${weatherController.weatherResponseModel!.main.humidity}",
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
                                       Text(
-                                        "Humidity 83%",
+                                        "Humidity",
                                         style: TextStyle(
                                             fontSize: 12, color: whitePrimary),
                                       ),
